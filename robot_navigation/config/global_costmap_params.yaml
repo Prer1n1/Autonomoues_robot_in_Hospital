@@ -1,0 +1,6 @@
+global_costmap:
+  global_frame: map  # Use the map frame since you have a static map
+  robot_base_frame: base_link
+  update_frequency: 2.0
+  publish_frequency: 2.0
+  static_map: true  # Use the pre-built map

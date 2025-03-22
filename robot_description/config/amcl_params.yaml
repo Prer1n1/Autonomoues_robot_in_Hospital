@@ -1,0 +1,39 @@
+# General Parameters
+min_particles: 500        # Increase for better accuracy
+max_particles: 2000       # Increase for better accuracy
+kld_err: 0.01
+kld_z: 0.99
+update_min_d: 0.05        # Update after moving 5cm
+update_min_a: 0.05        # Update after rotating ~3 degrees
+resample_interval: 1
+transform_tolerance: 0.3  # Allow 0.3s delay in TF
+recovery_alpha_slow: 0.001
+recovery_alpha_fast: 0.1
+
+# Initial Pose
+initial_pose_x: -5.0      # Match the new spawn position
+initial_pose_y: 0.0
+initial_pose_a: 0.0
+
+# Laser Parameters
+laser_min_range: -1.0     # Use all ranges
+laser_max_range: -1.0     # Use all ranges
+laser_max_beams: 360      # Use every 2nd beam (720 / 2)
+laser_z_hit: 0.85         # Weight for laser hits
+laser_z_short: 0.1
+laser_z_max: 0.05
+laser_z_rand: 0.1         # Slightly more weight to random noise
+laser_sigma_hit: 0.1      # Sharper likelihood field
+laser_lambda_short: 0.1
+laser_likelihood_max_dist: 2.0
+laser_model_type: "likelihood_field"
+
+# Odometry Parameters
+odom_model_type: "diff"   # Differential drive (skid-steer approximation)
+odom_alpha1: 0.3          # Rotational error from rotation
+odom_alpha2: 0.3          # Rotational error from translation
+odom_alpha3: 0.3          # Translational error from translation
+odom_alpha4: 0.3          # Translational error from rotation
+odom_frame_id: "odom"
+base_frame_id: "chassis"
+global_frame_id: "map"
